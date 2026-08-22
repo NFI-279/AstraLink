@@ -2,7 +2,7 @@
 name: Bug
 about: Report incorrect, unexpected, or broken AstraLink behavior
 title: "[Bug]"
-labels: bug
+labels: bug, research
 assignees: ''
 
 ---
