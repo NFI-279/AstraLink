@@ -2,7 +2,7 @@
 name: Feature
 about: Propose a new AstraLink capability or user-facing feature
 title: "[Feature]"
-labels: enhancement
+labels: enhancement, research
 assignees: ''
 
 ---
