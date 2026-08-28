@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,maximum-scale=1,user-scalable=no">
+  <meta name="theme-color" content="#f4f4f6">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="AstraLink">
+  <meta name="description" content="A premium companion app for the Opel Astra H.">
+  <title>AstraLink</title>
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./assets/images/app-icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/images/app-icon.svg">
+  <link rel="stylesheet" href="./assets/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="./css/app.css">
+</head>
+<body>
+  <svg class="icon-library" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m4 10 8-6 8 6v9a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1Z"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s6-5.7 6-11a6 6 0 1 0-12 0c0 5.3 6 11 6 11Z"/><circle cx="12" cy="10" r="2.2"/></symbol>
+    <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2"/><circle cx="18" cy="18" r="2"/><path d="M8 6h6.5a2.5 2.5 0 0 1 0 5H9.5a2.5 2.5 0 0 0 0 5H16"/></symbol>
+    <symbol id="i-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.2 13.3a7.6 7.6 0 0 0 0-2.6l2-1.5-2-3.4-2.4 1a8 8 0 0 0-2.3-1.3L14.2 3h-4.4l-.3 2.5a8 8 0 0 0-2.3 1.3l-2.4-1-2 3.4 2 1.5a7.6 7.6 0 0 0 0 2.6l-2 1.5 2 3.4 2.4-1a8 8 0 0 0 2.3 1.3l.3 2.5h4.4l.3-2.5a8 8 0 0 0 2.3-1.3l2.4 1 2-3.4Z"/></symbol>
+    <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5.5" y="10" width="13" height="10" rx="2.5"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10M12 14v2.5"/></symbol>
+    <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="5.5" y="10" width="13" height="10" rx="2.5"/><path d="M15.5 10V7.5a3.5 3.5 0 0 0-6.3-2M12 14v2.5"/></symbol>
+    <symbol id="i-lights" viewBox="0 0 24 24"><path d="M11 6.5H9.8a5.5 5.5 0 0 0 0 11H11ZM15 7.5l4-2M15.5 12H21M15 16.5l4 2"/></symbol>
+    <symbol id="i-horn" viewBox="0 0 24 24"><path d="M4.5 14v-4h4L15 6.5v11L8.5 14ZM18 9a5 5 0 0 1 0 6"/></symbol>
+    <symbol id="i-fuel" viewBox="0 0 24 24"><rect x="5.5" y="3.5" width="10" height="17" rx="2.3"/><path d="M8.5 7h4M15.5 7h1.2l2 2.7v6a1.5 1.5 0 0 0 3 0v-4L20 9"/></symbol>
+    <symbol id="i-car" viewBox="0 0 24 24"><path d="m4 14 1.7-4.5A2.3 2.3 0 0 1 7.8 8h7a2.5 2.5 0 0 1 2.1 1.2l2 3.4 1.5.8a1.4 1.4 0 0 1 .6 1.2V17H3v-1.5A1.5 1.5 0 0 1 4 14Z"/><circle cx="7" cy="17" r="1.5"/><circle cx="17" cy="17" r="1.5"/><path d="M6 12h12M9 8l1.5 4"/></symbol>
+    <symbol id="i-window" viewBox="0 0 24 24"><path d="M6 19 8.5 5h7L18 19ZM8 15h10M10 5l1 10"/></symbol>
+    <symbol id="i-boot" viewBox="0 0 24 24"><path d="M5 19V7a2 2 0 0 1 2-2h9l3 4v10ZM5 14h14M16 5v4h3"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m6.5 12.5 3.5 3.5 7.5-8"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path d="m7 7 10 10M17 7 7 17"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M7 16h10l-1-2V9a4 4 0 0 0-8 0v5ZM10 19h4"/></symbol>
+    <symbol id="i-navigation" viewBox="0 0 24 24"><path d="m4 11 16-7-7 16-2-7Z"/></symbol>
+    <symbol id="i-share" viewBox="0 0 24 24"><path d="M12 15V4M8 8l4-4 4 4M6 12H4v8h16v-8h-2"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-leaf" viewBox="0 0 24 24"><path d="M19 5C11 5 6 8 6 14a5 5 0 0 0 5 5c6 0 8-6 8-14Z"/><path d="M5 20c2-5 6-8 11-10"/></symbol>
+    <symbol id="i-speed" viewBox="0 0 24 24"><path d="M4 17a8 8 0 1 1 16 0M12 17l4-6"/><path d="M7 17h10"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="m12 3 7 3v5c0 4.6-2.7 7.5-7 10-4.3-2.5-7-5.4-7-10V6Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 15.5A8 8 0 0 1 8.5 4 8 8 0 1 0 20 15.5Z"/></symbol>
+    <symbol id="i-info" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 11v5M12 8v.1"/></symbol>
+  </svg>
+
+  <div class="app-shell">
+    <main class="pages">
+      <section class="page active" data-page="home" aria-labelledby="homeTitle">
+        <header class="page-topbar home-topbar">
+          <div><p class="overline">ASTRALINK</p><h1 id="homeTitle">Astra H</h1></div>
+          <button class="round-button" type="button" data-open-sheet="notifications" aria-label="Notifications"><img class="ion" src="./assets/icons/notifications-outline.svg" alt=""><span class="alert-dot"></span></button>
+        </header>
+
+        <section class="car-stage">
+          <div class="stage-aura"></div>
+          <p class="edition">CARAVAN · SILVER</p>
+          <img src="./assets/images/astra-h.png" alt="" id="vehicleSource" hidden>
+          <canvas class="car-image" id="vehicleCanvas" role="img" aria-label="Silver Opel Astra H Caravan"></canvas>
+          <div class="car-shadow"></div>
+          <div class="ready-line"><span></span><strong>Ready when you are</strong></div>
+        </section>
+
+        <button class="status-card glass-card" type="button" data-open-sheet="status">
+          <span class="status-orb"><img class="ion invert" src="./assets/icons/shield-checkmark-outline.svg" alt=""></span>
+          <span class="status-copy"><small>VEHICLE STATUS</small><strong id="statusSummary">Locked · Everything closed</strong></span>
+          <img class="chevron" src="./assets/icons/chevron-forward.svg" alt="">
+        </button>
+
+        <button class="fuel-card glass-card" type="button" data-open-sheet="fuel">
+          <span class="fuel-ring-small"><span>51<small>%</small></span></span>
+          <span class="fuel-copy"><small>FUEL & RANGE</small><strong>342 km remaining</strong><span id="refillPreview">Est. refill 190.72 RON</span></span>
+          <img class="chevron" src="./assets/icons/chevron-forward.svg" alt="">
+        </button>
+
+        <section class="remote-grid" aria-label="Remote controls">
+          <button class="remote-button" type="button" data-command="lights" aria-pressed="false"><span><img class="ion" src="./assets/icons/car-light-high.svg" alt=""></span><strong>Lights</strong></button>
+          <button class="remote-button" type="button" data-command="honk"><span><img class="ion" src="./assets/icons/volume-high-outline.svg" alt=""></span><strong>Honk</strong></button>
+          <button class="remote-button" type="button" data-command="unlock" aria-pressed="false"><span><img class="ion" src="./assets/icons/lock-open-outline.svg" alt=""></span><strong>Unlock</strong></button>
+          <button class="remote-button active" type="button" data-command="lock" aria-pressed="true"><span><img class="ion" src="./assets/icons/lock-closed-outline.svg" alt=""></span><strong>Lock</strong></button>
+        </section>
+        <p class="last-sync">Last synced moments ago</p>
+      </section>
+
+      <section class="page location-page" data-page="location" aria-labelledby="locationTitle">
+        <header class="page-topbar"><div><p class="overline">VEHICLE POSITION</p><h1 id="locationTitle">Location</h1></div><button class="round-button" id="shareLocation" type="button" aria-label="Share vehicle location"><img class="ion" src="./assets/icons/share-outline.svg" alt=""></button></header>
+        <section class="map-card map-card-v3" id="mapViewport" aria-label="Interactive map showing the vehicle parking pin">
+          <div class="live-map" id="liveMap" aria-label="Street map. Drag to move and pinch to zoom."></div>
+          <div class="parked-badge"><span></span><strong>Parked for 1 h 42 min</strong></div>
+          <div class="map-freshness" id="mapFreshness"><span></span><strong>Map updated just now</strong></div>
+          <button class="layer-button" id="layerButton" type="button" aria-label="Map layers" aria-expanded="false"><img class="ion" src="./assets/icons/map-outline.svg" alt=""></button>
+          <div class="layer-picker" id="layerPicker" hidden><strong>Map type</strong><button class="active" type="button" data-map-layer="standard"><span class="layer-preview standard"></span>Standard</button><button type="button" data-map-layer="satellite"><span class="layer-preview satellite"></span>Satellite</button><button type="button" data-map-layer="traffic"><span class="layer-preview traffic"></span>Traffic</button></div>
+          <div class="map-tools map-tools-v3">
+            <button id="mapZoomIn" type="button" aria-label="Zoom in">+</button><button id="mapZoomOut" type="button" aria-label="Zoom out">−</button><button id="locateVehicle" type="button" aria-label="Recenter on vehicle"><img class="ion" src="./assets/icons/navigate.svg" alt=""></button>
+          </div>
+          <p class="map-hint" id="mapHint">Pinch or drag the map</p>
+        </section>
+        <section class="location-panel location-panel-v3 surface-card">
+          <div class="location-title"><span class="location-icon"><img class="ion invert" src="./assets/icons/location-outline.svg" alt=""></span><div><small>VEHICLE IS PARKED AT</small><h2>Piața Unirii 1</h2><p>Bucharest, Romania</p></div></div>
+          <div class="location-meta location-meta-v2"><span><small>Parked</small><strong>1 h 42 min</strong></span><span><small>GPS accuracy</small><strong><i></i> 8 metres</strong></span><span><small>Updated</small><strong>2 min ago</strong></span></div>
+          <div class="location-actions"><button class="primary-button" id="directionsButton" type="button"><img class="ion invert" src="./assets/icons/navigate-outline.svg" alt="">Get directions</button><button class="secondary-button" id="shareLocationCard" type="button"><img class="ion" src="./assets/icons/share-outline.svg" alt="">Share</button></div>
+        </section>
+      </section>
+
+      <section class="page trips-page" data-page="trips" aria-labelledby="tripsTitle">
+        <header class="page-topbar"><div><p class="overline">DRIVING HISTORY</p><h1 id="tripsTitle">Trips</h1></div><button class="round-button" id="tripCalendar" type="button" aria-label="Choose trip date" aria-expanded="false"><img class="ion" src="./assets/icons/calendar-outline.svg" alt=""></button></header>
+        <section class="calendar-panel" id="calendarPanel" hidden aria-label="Choose a trip period"><header><button id="calendarPrevious" type="button" aria-label="Previous month">‹</button><strong id="calendarMonth">August 2026</strong><button id="calendarNext" type="button" aria-label="Next month">›</button></header><p class="calendar-selection-hint" id="calendarSelectionHint">Select the first day of your period</p><div class="calendar-weekdays" aria-hidden="true"><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span><span>Su</span></div><div class="calendar-days" id="calendarDays"></div><button class="calendar-all" id="calendarAll" type="button">Show entire month</button></section>
+        <section class="trip-hero trip-hero-light">
+          <div><p id="tripPeriodLabel">AUGUST TOTAL</p><strong id="tripPeriodDistance">486.2 <small>km</small></strong></div><span class="trip-count-badge" id="tripCountBadge">12 trips</span>
+          <div class="trip-hero-stats"><span><img class="ion" src="./assets/icons/speedometer-outline.svg" alt=""><b id="tripAverage">7.4 L/100 km</b><small>Average</small></span><span><img class="ion" src="./assets/icons/time-outline.svg" alt=""><b id="tripDuration">11 h 24 min</b><small>Drive time</small></span></div>
+        </section>
+        <section class="trip-fuel-card" id="tripFuelCard" aria-label="Fuel activity for selected period">
+          <header><div><p>FUEL ACTIVITY</p><strong id="fuelActivityTitle">August overview</strong></div><b id="fuelActivityVolume">68.7 L</b></header>
+          <div><span><small id="fuelActivityPrimaryLabel">Last refill · 22 Aug</small><strong id="fuelActivityPrimary">+24.3 L</strong></span><span><small>Estimated fuel cost</small><strong id="fuelActivityCost">511.82 RON</strong></span></div>
+          <small id="fuelActivityNote">Estimated from tank readings saved when the engine switches off.</small>
+        </section>
+        <div class="section-heading"><h2 id="driveListTitle">Recent drives</h2><span id="driveListMeta">August 2026</span></div>
+        <section class="trip-list" id="tripList">
+          <button class="trip-row" type="button" data-trip="City centre"><span class="trip-route-icon"><img class="ion" src="./assets/icons/trail-sign-outline.svg" alt=""></span><span class="trip-copy"><strong>Home → City centre</strong><small>Today · 18:24 · 24 min</small></span><span class="trip-distance"><b>12.8 km</b><small>7.1 L/100 km</small></span></button>
+          <button class="trip-row" type="button" data-trip="Office"><span class="trip-route-icon blue"><img class="ion" src="./assets/icons/trail-sign-outline.svg" alt=""></span><span class="trip-copy"><strong>Office → Home</strong><small>Yesterday · 17:42 · 31 min</small></span><span class="trip-distance"><b>15.4 km</b><small>7.8 L/100 km</small></span></button>
+          <button class="trip-row" type="button" data-trip="Turda"><span class="trip-route-icon green"><img class="ion" src="./assets/icons/trail-sign-outline.svg" alt=""></span><span class="trip-copy"><strong>Cluj-Napoca → Turda</strong><small>26 Aug · 10:16 · 49 min</small></span><span class="trip-distance"><b>34.6 km</b><small>6.5 L/100 km</small></span></button>
+          <button class="trip-row" type="button" data-trip="Airport"><span class="trip-route-icon purple"><img class="ion" src="./assets/icons/trail-sign-outline.svg" alt=""></span><span class="trip-copy"><strong>Home → Airport</strong><small>23 Aug · 06:20 · 28 min</small></span><span class="trip-distance"><b>18.1 km</b><small>7.3 L/100 km</small></span></button>
+        </section>
+      </section>
+
+      <section class="page settings-page" data-page="settings" aria-labelledby="settingsTitle">
+        <header class="page-topbar"><div><p class="overline">PERSONALISE</p><h1 id="settingsTitle">Settings</h1></div></header>
+        <button class="vehicle-profile surface-card" type="button" data-open-sheet="vehicle"><span><img class="ion invert" src="./assets/icons/car-sport-outline.svg" alt=""></span><div><strong>Astra H Caravan</strong><small>2006 · 1.6 Twinport · Silver</small></div><img class="chevron" src="./assets/icons/chevron-forward.svg" alt=""></button>
+        <h2 class="settings-label">VEHICLE & SECURITY</h2>
+        <section class="settings-group">
+          <div class="setting-row"><span class="setting-icon blue"><img class="ion invert" src="./assets/icons/shield-checkmark-outline.svg" alt=""></span><strong>Remote command confirmation</strong><button class="ios-switch on" type="button" role="switch" aria-label="Remote command confirmation" aria-checked="true" data-setting="confirm"><span></span></button></div>
+          <div class="setting-row"><span class="setting-icon orange"><img class="ion invert" src="./assets/icons/notifications-outline.svg" alt=""></span><strong>Vehicle alerts</strong><button class="ios-switch on" type="button" role="switch" aria-label="Vehicle alerts" aria-checked="true" data-setting="alerts"><span></span></button></div>
+        </section>
+        <h2 class="settings-label">APP</h2>
+        <section class="settings-group">
+          <div class="setting-row"><span class="setting-icon purple"><img class="ion invert" src="./assets/icons/moon-outline.svg" alt=""></span><strong>Dark appearance</strong><button class="ios-switch" type="button" role="switch" aria-label="Dark appearance" aria-checked="false" data-setting="dark"><span></span></button></div>
+          <div class="setting-row maps-preference-row"><span class="setting-icon blue"><img class="ion invert" src="./assets/icons/map-outline.svg" alt=""></span><div class="setting-copy"><strong>Preferred maps</strong><small>Used for directions</small></div><div class="maps-segment" role="radiogroup" aria-label="Preferred maps app"><button class="active" type="button" role="radio" aria-checked="true" data-maps-preference="apple">Apple</button><button type="button" role="radio" aria-checked="false" data-maps-preference="google">Google</button></div></div>
+          <button class="setting-row setting-action" type="button" id="installHelp"><span class="setting-icon gray"><img class="ion invert" src="./assets/icons/information-circle-outline.svg" alt=""></span><strong>Install on iPhone</strong><img class="chevron" src="./assets/icons/chevron-forward.svg" alt=""></button>
+        </section>
+        <p class="version">AstraLink 2.0 · Designed for Astra H</p>
+      </section>
+    </main>
+
+    <nav class="tabbar" aria-label="Main navigation">
+      <button class="tab active" type="button" data-tab="home"><img class="ion" src="./assets/icons/home-outline.svg" alt=""><span>Vehicle</span></button>
+      <button class="tab" type="button" data-tab="location"><img class="ion" src="./assets/icons/location-outline.svg" alt=""><span>Location</span></button>
+      <button class="tab" type="button" data-tab="trips"><img class="ion" src="./assets/icons/trail-sign-outline.svg" alt=""><span>Trips</span></button>
+      <button class="tab" type="button" data-tab="settings"><img class="ion" src="./assets/icons/settings-outline.svg" alt=""><span>Settings</span></button>
+    </nav>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"><span><svg><use href="#i-check"></use></svg></span><div><strong id="toastTitle">Done</strong><small id="toastDetail">Command completed</small></div></div>
+
+  <div class="sheet-backdrop" data-sheet="status" hidden><section class="bottom-sheet" role="dialog" aria-modal="true" aria-labelledby="statusTitle"><div class="grabber"></div><header class="sheet-header"><div><h2 id="statusTitle">Vehicle status</h2></div><button class="sheet-close" type="button" aria-label="Close"><img class="ion" src="./assets/icons/close.svg" alt=""></button></header><div class="status-hero"><span><img class="ion invert" src="./assets/icons/shield-checkmark-outline.svg" alt=""></span><div><strong id="sheetStatusTitle">Vehicle secured</strong><small>Updated moments ago</small></div></div><div class="status-list"><div><span><img class="ion" src="./assets/icons/lock-closed-outline.svg" alt="">Doors</span><strong id="doorStatus">Locked</strong></div><div><span><img class="ion" src="./assets/icons/car-windshield-outline.svg" alt="">Windows</span><strong>Closed</strong></div><div><span><img class="ion" src="./assets/icons/car-back.svg" alt="">Boot</span><strong>Closed</strong></div><div><span><img class="ion" src="./assets/icons/car-sport-outline.svg" alt="">Bonnet</span><strong>Closed</strong></div><div><span><img class="ion" src="./assets/icons/car-light-high.svg" alt="">Lights</span><strong id="lightStatus">Off</strong></div></div></section></div>
+
+  <div class="sheet-backdrop" data-sheet="fuel" hidden>
+    <section class="bottom-sheet fuel-sheet" role="dialog" aria-modal="true" aria-labelledby="fuelTitle">
+      <div class="grabber"></div>
+      <header class="sheet-header"><div><p class="overline">FUEL ESTIMATE</p><h2 id="fuelTitle">51% remaining</h2></div><button class="sheet-close" type="button" aria-label="Close"><img class="ion" src="./assets/icons/close.svg" alt=""></button></header>
+      <div class="fuel-overview"><div class="large-fuel-ring"><span><b>26.4</b><small>litres</small></span></div><div><small>ESTIMATED RANGE</small><strong>342 km</strong><p>Tank capacity 52 L</p></div></div>
+      <div class="calculator-card calculator-card-light"><label for="fuelPrice">Current petrol price</label><div class="price-input price-input-v2"><button type="button" data-price-step="-0.05" aria-label="Decrease petrol price">−</button><div class="price-value"><input id="fuelPrice" type="text" inputmode="decimal" enterkeyhint="done" autocomplete="off" value="7.45" aria-label="Current petrol price"><span>RON/L</span></div><button type="button" data-price-step="0.05" aria-label="Increase petrol price">+</button></div><div class="calculation-row"><span>Fuel needed to fill</span><strong>25.6 L</strong></div><div class="refill-total"><span>Estimated refill total</span><strong id="refillTotal">190.72 RON</strong></div></div>
+      <p class="sheet-note">Estimate uses the current 52-litre tank capacity and rounds to the nearest 0.01 RON.</p>
+    </section>
+  </div>
+
+  <div class="sheet-backdrop" data-sheet="notifications" hidden><section class="bottom-sheet notification-sheet" role="dialog" aria-modal="true" aria-labelledby="notificationTitle"><div class="grabber"></div><header class="sheet-header notification-header"><div><p class="overline">ASTRALINK</p><h2 id="notificationTitle">Notifications</h2></div><div class="notification-header-actions"><button class="notification-mark-all" id="markAllRead" type="button">Clear all</button><button class="sheet-close" type="button" aria-label="Close"><img class="ion" src="./assets/icons/close.svg" alt=""></button></div></header><div class="notification-list" id="notificationList"><article class="unread" data-notification="locked"><span class="setting-icon green"><img class="ion invert" src="./assets/icons/lock-closed-outline.svg" alt=""></span><div><strong>Vehicle locked</strong><p>Your Astra was secured at 18:42.</p><small>2 minutes ago</small></div></article><article class="unread" data-notification="fuel"><span class="setting-icon blue"><svg><use href="#i-fuel"></use></svg></span><div><strong>Fuel level updated</strong><p>Estimated range is now 342 km.</p><small>Today, 18:40</small></div></article><article data-notification="parked"><span class="setting-icon purple"><img class="ion invert" src="./assets/icons/location-outline.svg" alt=""></span><div><strong>Parking position saved</strong><p>Astra H was parked near Piața Unirii.</p><small>Today, 17:02</small></div></article><article data-notification="trip"><span class="setting-icon orange"><img class="ion invert" src="./assets/icons/trail-sign-outline.svg" alt=""></span><div><strong>Trip completed</strong><p>12.8 km added to your driving history.</p><small>Today, 16:48</small></div></article><article data-notification="status"><span class="setting-icon gray"><img class="ion invert" src="./assets/icons/shield-checkmark-outline.svg" alt=""></span><div><strong>Status check complete</strong><p>Doors, windows and boot are securely closed.</p><small>Yesterday, 22:14</small></div></article></div><div class="notification-empty" id="notificationEmpty" hidden><img class="ion" src="./assets/icons/notifications-outline.svg" alt=""><strong>You’re all caught up</strong><small>New vehicle alerts will appear here.</small></div></section></div>
+
+  <div class="sheet-backdrop" data-sheet="trip" hidden><section class="bottom-sheet" role="dialog" aria-modal="true" aria-labelledby="tripTitle"><div class="grabber"></div><header class="sheet-header"><div><p class="overline">TRIP DETAILS</p><h2 id="tripTitle">City centre</h2></div><button class="sheet-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button></header><div class="trip-map-card"><div class="trip-map" id="tripMap" aria-label="Map of the complete driven route"></div><span>Complete driven path</span></div><div class="trip-detail-route"><span></span><div><strong id="tripRouteStart">Home</strong><small>18:24</small><i></i><strong id="tripRouteEnd">City centre</strong><small>18:48</small></div></div><div class="trip-detail-grid"><span><small>Distance</small><strong id="tripDetailDistance">12.8 km</strong></span><span><small>Duration</small><strong>24 min</strong></span><span><small>Consumption</small><strong>7.1 L/100 km</strong></span><span><small>Fuel cost</small><strong>6.77 RON</strong></span></div></section></div>
+
+  <div class="sheet-backdrop" data-sheet="vehicle" hidden><section class="bottom-sheet vehicle-sheet" role="dialog" aria-modal="true" aria-labelledby="vehicleDetailsTitle"><div class="grabber"></div><header class="sheet-header"><div><p class="overline">MY VEHICLE</p><h2 id="vehicleDetailsTitle">Astra H Caravan</h2></div><button class="sheet-close" type="button" aria-label="Close"><img class="ion" src="./assets/icons/close.svg" alt=""></button></header><div class="vehicle-sheet-hero"><img id="vehicleSheetCar" src="./assets/images/astra-h.png" alt="Silver Astra H Caravan"></div><div class="vehicle-name-field"><label for="vehicleNameInput">Vehicle name</label><div><input id="vehicleNameInput" value="Astra H Caravan" maxlength="30"><button id="saveVehicleName" type="button">Save</button></div></div><div class="vin-decoder"><div class="vin-heading"><span><strong>VIN decoder</strong><small>Add or verify vehicle information</small></span><em>17 characters</em></div><div class="vin-input-row"><input id="vinInput" type="text" inputmode="text" autocapitalize="characters" autocomplete="off" maxlength="17" placeholder="Enter VIN" value="W0L0AHL3561234567" aria-label="Vehicle identification number"><button id="decodeVin" type="button">Decode</button></div><p class="vin-error" id="vinError" hidden>Enter a valid 17-character VIN without I, O or Q.</p><div class="vin-result vin-result-complete" id="vinResult" hidden><span><small>Model</small><strong id="vinModel">Astra H</strong></span><span><small>Body type</small><strong id="vinBody">Caravan / Estate</strong></span><span><small>Made</small><strong id="vinMade">18 April 2006</strong></span><span><small>Model year</small><strong id="vinYear">2006</strong></span><span><small>Factory</small><strong id="vinFactory">Bochum, Germany</strong></span><span class="vin-wide"><small>Engine</small><strong id="vinEngine">Z16XEP · 1.6 L · 77 kW / 105 hp · Euro 4</strong></span><span><small>Colour</small><strong id="vinColour">Silver · paint code pending</strong></span><span><small>Transmission</small><strong id="vinTransmission">5-speed manual · F17</strong></span><span><small>Trim level</small><strong id="vinTrim">Enjoy</strong></span><span><small>Steering</small><strong id="vinSteering">Left-hand drive</strong></span></div><p class="vin-source-note" id="vinSourceNote" hidden>Front-end preview using the configured Astra profile. Factory records will replace these values when the decoder service is connected.</p></div><div class="vehicle-facts"><div><small>Engine</small><strong>1.6 Twinport</strong></div><div><small>Body</small><strong>Caravan</strong></div><div><small>Colour</small><strong>Silver</strong></div><div><small>Registration</small><strong>GG WZ 634</strong></div></div></section></div>
+
+  <div class="sheet-backdrop" data-sheet="install" hidden><section class="bottom-sheet compact-sheet" role="dialog" aria-modal="true" aria-labelledby="installTitle"><div class="grabber"></div><header class="sheet-header"><div><p class="overline">IPHONE</p><h2 id="installTitle">Install AstraLink</h2></div><button class="sheet-close" type="button" aria-label="Close"><svg><use href="#i-close"></use></svg></button></header><div class="install-steps"><span>1</span><p>Open AstraLink in <strong>Safari</strong>.</p><span>2</span><p>Tap the <strong>Share</strong> button.</p><span>3</span><p>Choose <strong>Add to Home Screen</strong>.</p></div></section></div>
+
+  <script src="./assets/vendor/leaflet/leaflet.js"></script>
+  <script src="./js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<main id="vehicle-page" class="vehicle-page">
+
+    <header class="vehicle-header">
+
+        <button
+            class="icon-button"
+            id="notifications-button"
+            type="button"
+            aria-label="Notifications"
+        >
+            <span class="temporary-icon">♢</span>
+        </button>
+
+        <div class="vehicle-name">
+            Astra H
+        </div>
+
+        <div class="vehicle-header-spacer"></div>
+
+    </header>
+
+
+    <section class="vehicle-hero">
+
+        <div class="vehicle-hero-title">
+            ALL<br>
+            GOOD
+        </div>
+
+        <div class="vehicle-hero-light"></div>
+
+        <img
+            class="vehicle-hero-car"
+            src="./assets/images/astra-h.png"
+            alt="Silver Opel Astra H Caravan"
+        >
+
+        <div class="vehicle-hero-fade"></div>
+
+    </section>
+
+
+    <section class="vehicle-status-summary">
+
+        <button
+            id="open-vehicle-status"
+            class="vehicle-status-button"
+            type="button"
+        >
+            <span>CHECK STATUS</span>
+
+            <span aria-hidden="true">
+                ›
+            </span>
+        </button>
+
+        <div class="vehicle-last-sync">
+            Updated from vehicle 18:42
+        </div>
+
+    </section>
+
+
+    <button
+        id="open-fuel"
+        class="vehicle-fuel card"
+        type="button"
+    >
+
+        <div class="vehicle-fuel-main">
+
+            <div class="vehicle-fuel-label">
+                Fuel level
+            </div>
+
+            <div class="vehicle-fuel-value">
+                <strong>26.4 L</strong>
+
+                <span>
+                    / 51%
+                </span>
+            </div>
+
+        </div>
+
+        <div class="vehicle-fuel-progress">
+
+            <div
+                class="vehicle-fuel-progress-value"
+                style="width: 51%"
+            ></div>
+
+        </div>
+
+    </button>
+
+
+    <section
+        id="remote-services"
+        class="remote-services card"
+    >
+
+        <div
+            id="remote-services-actions"
+            class="remote-services-actions"
+        >
+
+            <button
+                class="remote-service-button"
+                data-command="lock"
+                type="button"
+                aria-label="Lock vehicle"
+            >
+                <span class="temporary-icon">▣</span>
+            </button>
+
+
+            <button
+                class="remote-service-button"
+                data-command="unlock"
+                type="button"
+                aria-label="Unlock vehicle"
+            >
+                <span class="temporary-icon">▢</span>
+            </button>
+
+
+            <button
+                class="remote-service-button"
+                data-command="flash"
+                type="button"
+                aria-label="Flash lights"
+            >
+                <span class="temporary-icon">☼</span>
+            </button>
+
+
+            <button
+                class="remote-service-button"
+                data-command="honk"
+                type="button"
+                aria-label="Honk"
+            >
+                <span class="temporary-icon">◖</span>
+            </button>
+
+        </div>
+
+
+        <button
+            id="remote-services-toggle"
+            class="remote-services-toggle"
+            type="button"
+            aria-expanded="true"
+        >
+
+            <span>
+                Remote Services
+            </span>
+
+            <span
+                class="remote-services-chevron"
+                aria-hidden="true"
+            >
+               ⌄
+            </span>
+
+        </button>
+
+    </section>
+
+</main>

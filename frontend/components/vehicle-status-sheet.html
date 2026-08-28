@@ -1,0 +1,128 @@
+<div
+    id="vehicle-status-backdrop"
+    class="sheet-backdrop hidden"
+>
+
+    <section
+        class="bottom-sheet vehicle-status-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="vehicle-status-title"
+    >
+
+        <button
+            class="sheet-grabber"
+            type="button"
+            data-sheet-close="vehicle-status"
+            aria-label="Close vehicle status"
+        ></button>
+
+
+        <header class="sheet-header">
+
+            <div></div>
+
+            <span>
+                Status
+            </span>
+
+            <button
+                class="sheet-close"
+                type="button"
+                data-sheet-close="vehicle-status"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </header>
+
+
+        <div class="sheet-content">
+
+            <h2 id="vehicle-status-title">
+                Vehicle Status
+            </h2>
+
+
+            <div class="card vehicle-status-list">
+
+                <div class="vehicle-status-row">
+                    <span>
+                        Locked
+                    </span>
+
+                    <strong>
+                        Good
+                    </strong>
+                </div>
+
+
+                <div class="vehicle-status-row">
+                    <span>
+                        Doors
+                    </span>
+
+                    <strong>
+                        Closed
+                    </strong>
+                </div>
+
+
+                <div class="vehicle-status-row">
+                    <span>
+                        Windows
+                    </span>
+
+                    <strong>
+                        Closed
+                    </strong>
+                </div>
+
+
+                <div class="vehicle-status-row">
+                    <span>
+                        Last sync
+                    </span>
+
+                    <span>
+                        18:42
+                    </span>
+                </div>
+
+
+                <div class="vehicle-status-row">
+                    <span>
+                        Parked duration
+                    </span>
+
+                    <span>
+                        2h 31m
+                    </span>
+                </div>
+
+
+                <button
+                    id="vehicle-status-location"
+                    class="
+                        vehicle-status-row
+                        vehicle-status-location
+                    "
+                    type="button"
+                >
+                    <span>
+                        Location
+                    </span>
+
+                    <span>
+                        Bucharest ›
+                    </span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>

@@ -1,0 +1,500 @@
+/* =========================
+   VEHICLE DETAILS SHEET
+   ========================= */
+
+.vehicle-details-sheet {
+    width:
+        min(
+            390px,
+            100vw
+        );
+
+    height:
+        min(
+            760px,
+            calc(
+                100dvh
+                - 62px
+            )
+        );
+
+    max-height:
+        calc(
+            100dvh
+            - 62px
+        );
+
+    padding:
+        10px
+        14px
+        calc(
+            20px
+            + env(
+                safe-area-inset-bottom,
+                0px
+            )
+        );
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+
+    border-radius:
+        28px
+        28px
+        0
+        0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f6f7fa 0%,
+            #f1f2f6 100%
+        );
+
+    box-shadow:
+        0
+        -16px
+        38px
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+}
+
+
+/* =========================
+   BACKGROUND LOCK
+   ========================= */
+
+/*
+ * Settings underneath the sheet must not
+ * scroll while Vehicle Details is open.
+ *
+ * This rule is removed automatically when
+ * the sheet closes because the body class
+ * is removed in vehicle-details.js.
+ */
+
+body.vehicle-details-open {
+    overflow: hidden !important;
+}
+
+
+body.vehicle-details-open
+.settings-screen {
+    overflow: hidden !important;
+}
+
+
+/* =========================
+   GRABBER
+   ========================= */
+
+.vehicle-details-sheet
+.grabber {
+    flex:
+        0
+        0
+        auto;
+
+    cursor: grab;
+
+    touch-action: none;
+}
+
+
+.vehicle-details-sheet
+.grabber:active {
+    cursor: grabbing;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.vehicle-details-header {
+    flex:
+        0
+        0
+        auto;
+
+    min-height: 42px;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        36px;
+
+    align-items: center;
+
+    padding:
+        0
+        2px
+        4px
+        8px;
+}
+
+
+.vehicle-details-heading {
+    color:
+        #172033;
+
+    font-size: 22px;
+
+    font-weight: 800;
+
+    letter-spacing:
+        -0.5px;
+}
+
+
+/* =========================
+   SCROLLABLE CONTENT
+   ========================= */
+
+.vehicle-details-content {
+    flex:
+        1
+        1
+        auto;
+
+    min-height: 0;
+
+    overflow-y: auto;
+
+    overflow-x: hidden;
+
+    overscroll-behavior:
+        contain;
+
+    -webkit-overflow-scrolling:
+        touch;
+
+    touch-action:
+        pan-y;
+
+    padding:
+        10px
+        2px
+        8px;
+
+    scrollbar-width:
+        none;
+}
+
+
+.vehicle-details-content::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   SUMMARY
+   ========================= */
+
+.vehicle-details-summary {
+    min-height: 74px;
+
+    padding:
+        12px
+        14px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+}
+
+
+.vehicle-details-car-icon {
+    width: 44px;
+    height: 44px;
+
+    flex:
+        0
+        0
+        44px;
+
+    border-radius: 13px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        var(--blue-soft);
+
+    color:
+        var(--blue);
+}
+
+
+.vehicle-details-car-icon
+svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+.vehicle-details-summary-copy {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+
+.vehicle-details-summary-copy
+strong {
+    font-size: 17px;
+
+    font-weight: 700;
+}
+
+
+.vehicle-details-summary-copy
+span {
+    color:
+        var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.vehicle-details-section {
+    margin-top: 20px;
+}
+
+
+.vehicle-details-section-title {
+    margin:
+        0
+        0
+        7px
+        6px;
+
+    color:
+        #8c919a;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    letter-spacing:
+        0.08em;
+}
+
+
+.vehicle-details-card {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background:
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
+
+    box-shadow:
+        0
+        5px
+        18px
+        rgba(
+            25,
+            33,
+            45,
+            0.035
+        );
+}
+
+
+/* =========================
+   DETAIL ROWS
+   ========================= */
+
+.vehicle-details-row {
+    min-height: 49px;
+
+    padding:
+        8px
+        14px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+}
+
+
+.vehicle-details-row
+span {
+    flex:
+        0
+        0
+        auto;
+
+    color:
+        #222b3a;
+
+    font-size: 14px;
+}
+
+
+.vehicle-details-row
+strong {
+    min-width: 0;
+
+    color:
+        #898f99;
+
+    text-align: right;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.vehicle-details-divider {
+    height: 1px;
+
+    margin-left: 14px;
+
+    background:
+        var(--line);
+}
+
+
+/* =========================
+   NOTE
+   ========================= */
+
+.vehicle-details-note {
+    padding:
+        17px
+        8px
+        8px;
+
+    color:
+        var(--muted);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================
+   SHORTER SCREENS
+   ========================= */
+
+@media (
+    max-height: 700px
+) {
+
+    .vehicle-details-sheet {
+        height:
+            calc(
+                100dvh
+                - 42px
+            );
+
+        max-height:
+            calc(
+                100dvh
+                - 42px
+            );
+    }
+
+}
+
+/* =========================
+   VEHICLE DETAIL ACTION ROW
+   ========================= */
+
+button.vehicle-details-row {
+    width: 100%;
+
+    border: none;
+
+    background:
+        transparent;
+
+    font: inherit;
+
+    text-align: left;
+
+    -webkit-tap-highlight-color:
+        transparent;
+}
+
+
+button.vehicle-details-row:active {
+    background:
+        rgba(
+            20,
+            30,
+            44,
+            0.035
+        );
+}
+
+
+.vehicle-details-action-value {
+    min-width: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+
+.vehicle-details-action-value
+strong {
+    color:
+        #898f99;
+}
+
+
+.vehicle-details-action-value
+svg {
+    width: 15px;
+    height: 15px;
+
+    flex:
+        0
+        0
+        auto;
+
+    color:
+        #a2a7b0;
+}

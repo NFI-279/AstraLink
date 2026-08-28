@@ -1,0 +1,46 @@
+.card,
+.card-soft,
+.card-surface {
+    background:
+        var(--surface);
+
+    border:
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.5
+        );
+
+    box-shadow:
+        var(--shadow);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+}
+
+
+.card {
+    border-radius:
+        var(--radius-lg);
+}
+
+
+.card-soft {
+    border-radius: 26px;
+}
+
+
+.card-surface {
+    border-radius: 18px;
+}
+
+
+.interactive:active {
+    transform:
+        scale(0.99);
+}

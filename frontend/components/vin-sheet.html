@@ -1,0 +1,153 @@
+<div
+    class="vin-backdrop hidden"
+    id="vinBackdrop"
+>
+    <section
+        class="vin-sheet"
+        id="vinSheet"
+        aria-label="Configure VIN"
+    >
+        <div class="vin-grabber"></div>
+
+
+        <header class="vin-header">
+
+            <button
+                class="circle-btn"
+                type="button"
+                data-close-vin
+                aria-label="Close VIN configuration"
+            >
+                <svg>
+                    <use href="#i-x"></use>
+                </svg>
+            </button>
+
+
+            <div class="vin-header-title">
+                Configure VIN
+            </div>
+
+
+            <div class="vin-header-placeholder"></div>
+
+        </header>
+
+
+        <div class="vin-content">
+
+            <div class="vin-intro-icon">
+                <svg>
+                    <use href="#i-car"></use>
+                </svg>
+            </div>
+
+
+            <h2>
+                Vehicle Identification Number
+            </h2>
+
+
+            <p class="vin-description">
+                Enter the vehicle's 17-character VIN.
+                AstraLink will use it to retrieve available
+                vehicle information once VIN decoding is connected.
+            </p>
+
+
+            <div class="vin-input-group">
+
+                <label for="vinInput">
+                    VIN
+                </label>
+
+
+                <div class="vin-input-wrapper">
+
+                    <input
+                        id="vinInput"
+                        type="text"
+                        inputmode="text"
+                        autocomplete="off"
+                        autocorrect="off"
+                        autocapitalize="characters"
+                        spellcheck="false"
+                        maxlength="17"
+                        placeholder="17-character VIN"
+                        aria-describedby="vinHelp vinError"
+                    />
+
+
+                    <span
+                        class="vin-counter"
+                        id="vinCounter"
+                    >
+                        0 / 17
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="vin-error hidden"
+                    id="vinError"
+                    role="alert"
+                ></div>
+
+
+                <div
+                    class="vin-help"
+                    id="vinHelp"
+                >
+                    VINs do not use the letters I, O or Q.
+                </div>
+
+            </div>
+
+
+            <div class="vin-information-card">
+
+                <div class="vin-information-icon">
+                    <svg>
+                        <use href="#i-info"></use>
+                    </svg>
+                </div>
+
+
+                <div>
+                    <strong>
+                        Decoding is not connected yet
+                    </strong>
+
+                    <p>
+                        The VIN will be saved on this device for now.
+                        AstraLink will not invent vehicle information
+                        that has not been decoded.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <button
+                class="vin-save-button"
+                id="saveVin"
+                type="button"
+                disabled
+            >
+                Save VIN
+            </button>
+
+
+            <button
+                class="vin-remove-button hidden"
+                id="removeVin"
+                type="button"
+            >
+                Remove VIN
+            </button>
+
+        </div>
+
+    </section>
+</div>

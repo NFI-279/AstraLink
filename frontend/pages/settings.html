@@ -1,0 +1,466 @@
+<main
+    class="screen settings-screen"
+    id="screen-settings"
+>
+    <header class="settings-header">
+        <h1>Settings</h1>
+    </header>
+
+
+    <button
+        class="settings-profile-card"
+        type="button"
+        data-settings-action="vehicle-details"
+    >
+        <div class="settings-profile-icon settings-icon-blue">
+            <svg>
+                <use href="#i-car"></use>
+            </svg>
+        </div>
+
+        <div class="settings-profile-copy">
+            <strong>Astra H</strong>
+            <span>2006 Opel Astra H · 1.6i</span>
+        </div>
+
+        <svg class="settings-chevron">
+            <use href="#i-chevron-right"></use>
+        </svg>
+    </button>
+
+
+    <section class="settings-section">
+
+        <h2>SECURITY</h2>
+
+        <div class="settings-group">
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="passkey"
+            >
+                <span class="settings-row-icon settings-icon-blue">
+                    <svg>
+                        <use href="#i-face"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Passkey / Face ID
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+
+            <div class="settings-divider"></div>
+
+
+            <div class="settings-row">
+
+                <span class="settings-row-icon settings-icon-blue">
+                    <svg>
+                        <use href="#i-shield"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Require auth for remote commands
+                </span>
+
+                <button
+                    class="ios-switch active"
+                    type="button"
+                    role="switch"
+                    aria-checked="true"
+                    data-setting-toggle="remote-auth"
+                    aria-label="Require authentication for remote commands"
+                >
+                    <span></span>
+                </button>
+
+            </div>
+
+
+            <div class="settings-divider"></div>
+
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="remote-unlock-security"
+            >
+                <span class="settings-row-icon settings-icon-orange">
+                    <svg>
+                        <use href="#i-key"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Remote unlock security
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="settings-section">
+
+        <h2>NOTIFICATIONS</h2>
+
+        <div class="settings-group">
+
+            <div class="settings-row">
+
+                <span class="settings-row-icon settings-icon-orange">
+                    <svg>
+                        <use href="#i-window"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Window left open
+                </span>
+
+                <button
+                    class="ios-switch active"
+                    type="button"
+                    role="switch"
+                    aria-checked="true"
+                    data-setting-toggle="window-open"
+                    aria-label="Window left open notifications"
+                >
+                    <span></span>
+                </button>
+
+            </div>
+
+
+            <div class="settings-divider"></div>
+
+
+            <div class="settings-row">
+
+                <span class="settings-row-icon settings-icon-red">
+                    <svg>
+                        <use href="#i-sync"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Shutdown sync failed
+                </span>
+
+                <button
+                    class="ios-switch"
+                    type="button"
+                    role="switch"
+                    aria-checked="false"
+                    data-setting-toggle="shutdown-sync"
+                    aria-label="Shutdown sync failed notifications"
+                >
+                    <span></span>
+                </button>
+
+            </div>
+
+
+            <div class="settings-divider"></div>
+
+
+            <div class="settings-row">
+
+                <span class="settings-row-icon settings-icon-red">
+                    <svg>
+                        <use href="#i-alert"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Vehicle communication error
+                </span>
+
+                <button
+                    class="ios-switch active"
+                    type="button"
+                    role="switch"
+                    aria-checked="true"
+                    data-setting-toggle="communication-error"
+                    aria-label="Vehicle communication error notifications"
+                >
+                    <span></span>
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="settings-section">
+
+        <h2>FUEL</h2>
+
+        <div class="settings-group">
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="petrol-price"
+            >
+                <span class="settings-row-icon settings-icon-blue">
+                    <svg>
+                        <use href="#i-fuel"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Petrol price
+                </span>
+
+                <span class="settings-row-value">
+                    7.42 RON/L
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+
+            <div class="settings-divider"></div>
+
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="units"
+            >
+                <span class="settings-row-icon settings-icon-blue">
+                    <svg>
+                        <use href="#i-info"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Currency & units
+                </span>
+
+                <span class="settings-row-value">
+                    RON · km
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+
+            <div class="settings-divider"></div>
+
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="estimated-refill"
+            >
+                <span class="settings-row-icon settings-icon-gray">
+                    <svg>
+                        <use href="#i-doc"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Estimated refill
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="settings-section">
+
+        <h2>VEHICLE</h2>
+
+        <div class="settings-group">
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="vehicle-name"
+            >
+                <span class="settings-row-icon settings-icon-gray">
+                    <svg>
+                        <use href="#i-pencil"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Vehicle name
+                </span>
+
+                <span class="settings-row-value">
+                    Astra H
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+
+            <div class="settings-divider"></div>
+
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="map-app"
+            >
+                <span class="settings-row-icon settings-icon-blue">
+                    <svg>
+                        <use href="#i-map"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    Preferred map app
+                </span>
+
+                <span class="settings-row-value">
+                    Apple Maps
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="settings-section">
+
+        <h2>APPEARANCE</h2>
+
+        <div class="settings-group settings-theme-group">
+
+            <div class="settings-theme-row">
+
+                <span class="settings-theme-title">
+                    Theme
+                </span>
+
+                <div
+                    class="theme-segmented"
+                    role="group"
+                    aria-label="Theme"
+                >
+                    <button
+                        class="theme-segment active"
+                        type="button"
+                        data-theme-option="light"
+                    >
+                        Light
+                    </button>
+
+                    <button
+                        class="theme-segment"
+                        type="button"
+                        data-theme-option="dark"
+                    >
+                        Dark
+                    </button>
+
+                    <button
+                        class="theme-segment"
+                        type="button"
+                        data-theme-option="system"
+                    >
+                        System
+                    </button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="settings-section">
+
+        <h2>ABOUT</h2>
+
+        <div class="settings-group">
+
+            <button
+                class="settings-row"
+                type="button"
+                data-settings-action="about"
+            >
+                <span class="settings-row-icon settings-icon-blue">
+                    <svg>
+                        <use href="#i-info"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    AstraLink
+                </span>
+
+                <svg class="settings-chevron">
+                    <use href="#i-chevron-right"></use>
+                </svg>
+            </button>
+
+
+            <div class="settings-divider"></div>
+
+
+            <div class="settings-row">
+
+                <span class="settings-row-icon settings-icon-gray">
+                    <svg>
+                        <use href="#i-info"></use>
+                    </svg>
+                </span>
+
+                <span class="settings-row-title">
+                    App version
+                </span>
+
+                <span class="settings-row-value">
+                    1.0.0
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <footer class="settings-footer">
+        AstraLink · Made with care for your Astra H
+    </footer>
+
+</main>
