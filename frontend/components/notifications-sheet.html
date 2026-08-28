@@ -1,0 +1,363 @@
+<div
+    class="notifications-backdrop hidden"
+    id="notificationsBackdrop"
+>
+    <section
+        class="notifications-sheet draggable-sheet"
+        id="notificationsSheet"
+        aria-label="Notifications"
+    >
+        <div class="notifications-grabber"></div>
+
+        <header class="notifications-header">
+            <button
+                class="notifications-close"
+                id="closeNotifications"
+                type="button"
+                aria-label="Close notifications"
+            >
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                >
+                    <path d="M6 6L18 18"></path>
+                    <path d="M18 6L6 18"></path>
+                </svg>
+            </button>
+
+            <div class="notifications-title">
+                Notifications
+            </div>
+
+            <button
+                class="notifications-clear"
+                id="markNotificationsRead"
+                type="button"
+            >
+                Clear
+            </button>
+        </header>
+
+
+        <div
+            class="notifications-list"
+            id="notificationsList"
+        >
+
+            <article
+                class="ios-notification unread"
+                data-notification
+            >
+                <div class="ios-notification-header">
+                    <div class="ios-notification-app">
+                        <div class="notification-app-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="
+                                        M5 16
+                                        L6.7 10.5
+                                        C7 9.5 7.9 9 9 9
+                                        H15
+                                        C16.1 9 17 9.5 17.3 10.5
+                                        L19 16
+                                    "
+                                ></path>
+
+                                <path
+                                    d="
+                                        M4 16
+                                        H20
+                                        V19
+                                        H4
+                                        Z
+                                    "
+                                ></path>
+
+                                <circle
+                                    cx="7"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+
+                                <circle
+                                    cx="17"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+                            </svg>
+                        </div>
+
+                        <span>AstraLink</span>
+                    </div>
+
+                    <time>2m ago</time>
+                </div>
+
+                <div class="ios-notification-content">
+                    <strong>
+                        Window left open
+                    </strong>
+
+                    <p>
+                        Front-left window was still open
+                        when the vehicle shut down.
+                    </p>
+                </div>
+            </article>
+
+
+            <article
+                class="ios-notification unread"
+                data-notification
+            >
+                <div class="ios-notification-header">
+                    <div class="ios-notification-app">
+                        <div class="notification-app-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="
+                                        M5 16
+                                        L6.7 10.5
+                                        C7 9.5 7.9 9 9 9
+                                        H15
+                                        C16.1 9 17 9.5 17.3 10.5
+                                        L19 16
+                                    "
+                                ></path>
+
+                                <path
+                                    d="
+                                        M4 16
+                                        H20
+                                        V19
+                                        H4
+                                        Z
+                                    "
+                                ></path>
+
+                                <circle
+                                    cx="7"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+
+                                <circle
+                                    cx="17"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+                            </svg>
+                        </div>
+
+                        <span>AstraLink</span>
+                    </div>
+
+                    <time>18m ago</time>
+                </div>
+
+                <div class="ios-notification-content">
+                    <strong>
+                        Shutdown sync failed
+                    </strong>
+
+                    <p>
+                        AstraLink could not upload the
+                        final vehicle snapshot.
+                    </p>
+                </div>
+            </article>
+
+
+            <article
+                class="ios-notification unread"
+                data-notification
+            >
+                <div class="ios-notification-header">
+                    <div class="ios-notification-app">
+                        <div class="notification-app-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="
+                                        M5 16
+                                        L6.7 10.5
+                                        C7 9.5 7.9 9 9 9
+                                        H15
+                                        C16.1 9 17 9.5 17.3 10.5
+                                        L19 16
+                                    "
+                                ></path>
+
+                                <path
+                                    d="
+                                        M4 16
+                                        H20
+                                        V19
+                                        H4
+                                        Z
+                                    "
+                                ></path>
+
+                                <circle
+                                    cx="7"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+
+                                <circle
+                                    cx="17"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+                            </svg>
+                        </div>
+
+                        <span>AstraLink</span>
+                    </div>
+
+                    <time>1h ago</time>
+                </div>
+
+                <div class="ios-notification-content">
+                    <strong>
+                        Vehicle communication error
+                    </strong>
+
+                    <p>
+                        Communication with the vehicle
+                        interface was temporarily lost.
+                    </p>
+                </div>
+            </article>
+
+
+            <article
+                class="ios-notification"
+                data-notification
+            >
+                <div class="ios-notification-header">
+                    <div class="ios-notification-app">
+                        <div class="notification-app-icon">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.8"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                            >
+                                <path
+                                    d="
+                                        M5 16
+                                        L6.7 10.5
+                                        C7 9.5 7.9 9 9 9
+                                        H15
+                                        C16.1 9 17 9.5 17.3 10.5
+                                        L19 16
+                                    "
+                                ></path>
+
+                                <path
+                                    d="
+                                        M4 16
+                                        H20
+                                        V19
+                                        H4
+                                        Z
+                                    "
+                                ></path>
+
+                                <circle
+                                    cx="7"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+
+                                <circle
+                                    cx="17"
+                                    cy="18"
+                                    r="1"
+                                ></circle>
+                            </svg>
+                        </div>
+
+                        <span>AstraLink</span>
+                    </div>
+
+                    <time>Yesterday</time>
+                </div>
+
+                <div class="ios-notification-content">
+                    <strong>
+                        Remote command completed
+                    </strong>
+
+                    <p>
+                        Exterior lights flashed successfully.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+
+
+        <div
+            class="notifications-empty hidden"
+            id="notificationsEmpty"
+        >
+            <div class="notifications-empty-icon">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                >
+                    <path
+                        d="
+                            M18 8
+                            A6 6 0 0 0 6 8
+                            C6 15 3 15 3 17
+                            H21
+                            C21 15 18 15 18 8
+                        "
+                    ></path>
+
+                    <path d="M10 21H14"></path>
+                </svg>
+            </div>
+
+            <strong>
+                No Notifications
+            </strong>
+
+            <p>
+                You're all caught up.
+            </p>
+        </div>
+    </section>
+</div>

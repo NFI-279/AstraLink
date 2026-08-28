@@ -1,0 +1,28 @@
+.icon-button {
+    width: 34px;
+    height: 34px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 999px;
+
+    background: transparent;
+
+    display: grid;
+    place-items: center;
+
+    color: #6d7685;
+
+    cursor: pointer;
+}
+
+.icon-button:active {
+    opacity: 0.55;
+}
+
+.icon-button img,
+.icon-button svg {
+    width: 21px;
+    height: 21px;
+}

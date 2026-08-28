@@ -1,0 +1,193 @@
+<div
+    id="fuel-backdrop"
+    class="sheet-backdrop hidden"
+>
+
+    <section
+        class="bottom-sheet fuel-sheet"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="fuel-sheet-title"
+    >
+
+        <button
+            class="sheet-grabber"
+            type="button"
+            data-sheet-close="fuel"
+            aria-label="Close fuel details"
+        ></button>
+
+
+        <header class="sheet-header">
+
+            <button
+                class="sheet-close"
+                type="button"
+                data-sheet-close="fuel"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+            <span>
+                Fuel
+            </span>
+
+            <div></div>
+
+        </header>
+
+
+        <div class="sheet-content fuel-sheet-content">
+
+            <h2 id="fuel-sheet-title">
+                Fuel
+            </h2>
+
+
+            <section class="card fuel-current-card">
+
+                <div class="fuel-card-label">
+                    Current Fuel Level
+                </div>
+
+                <div class="fuel-current-value">
+                    26.4 L
+                </div>
+
+                <div class="fuel-current-percent">
+                    51% of tank capacity
+                </div>
+
+
+                <div class="fuel-large-progress">
+
+                    <div
+                        class="fuel-large-progress-value"
+                        style="width: 51%"
+                    ></div>
+
+                </div>
+
+
+                <div class="fuel-progress-labels">
+
+                    <span>
+                        Empty
+                    </span>
+
+                    <span>
+                        52 L capacity
+                    </span>
+
+                    <span>
+                        Full
+                    </span>
+
+                </div>
+
+            </section>
+
+
+            <div class="fuel-stat-grid">
+
+                <section class="card fuel-stat-card">
+
+                    <strong>
+                        25.6 L
+                    </strong>
+
+                    <span>
+                        Liters to full
+                    </span>
+
+                </section>
+
+
+                <section class="card fuel-stat-card">
+
+                    <strong>
+                        ~340 km
+                    </strong>
+
+                    <span>
+                        Estimated range
+                    </span>
+
+                </section>
+
+            </div>
+
+
+            <section class="card fuel-price-card">
+
+                <div class="fuel-card-label">
+                    Petrol Price
+                </div>
+
+
+                <div class="fuel-price-row">
+
+                    <div>
+
+                        <strong id="fuel-price">
+                            7.42
+                        </strong>
+
+                        <span>
+                            RON / L
+                        </span>
+
+                    </div>
+
+
+                    <div class="fuel-price-stepper">
+
+                        <button
+                            id="fuel-price-minus"
+                            type="button"
+                        >
+                            −
+                        </button>
+
+                        <button
+                            id="fuel-price-plus"
+                            type="button"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="card fuel-refill-card">
+
+                <div>
+
+                    <div class="fuel-card-label">
+                        Estimated Refill Cost
+                    </div>
+
+                    <strong
+                        id="fuel-refill-cost"
+                    >
+                        189.95 RON
+                    </strong>
+
+                    <span>
+                        To fill remaining 25.6 L
+                    </span>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </section>
+
+</div>

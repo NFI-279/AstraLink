@@ -1,0 +1,39 @@
+:root {
+    --bg: #f3f4f7;
+
+    --surface: rgba(255, 255, 255, 0.88);
+    --surface-solid: #ffffff;
+    --surface-soft: rgba(255, 255, 255, 0.62);
+
+    --text: #172033;
+    --muted: #838b98;
+    --muted-2: #a2a8b3;
+
+    --line: rgba(18, 32, 52, 0.09);
+
+    --blue: #0a84ff;
+    --blue-soft: rgba(10, 132, 255, 0.12);
+
+    --green: #31c95c;
+    --green-soft: rgba(49, 201, 92, 0.12);
+
+    --amber: #ff9f0a;
+    --amber-soft: rgba(255, 159, 10, 0.14);
+
+    --red: #ff5d5d;
+    --red-soft: rgba(255, 93, 93, 0.14);
+
+    --gray-soft: rgba(116, 125, 140, 0.12);
+
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --radius-md: 18px;
+
+    --tabbar-h: 56px;
+
+    --shadow:
+        0
+        10px
+        30px
+        rgba(27, 36, 51, 0.07);
+}

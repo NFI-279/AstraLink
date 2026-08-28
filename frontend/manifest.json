@@ -1,0 +1,19 @@
+{
+  "name": "AstraLink",
+  "short_name": "AstraLink",
+  "description": "A premium companion for the Opel Astra H.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f3f3f5",
+  "theme_color": "#f4f4f6",
+  "icons": [
+    {
+      "src": "./assets/images/app-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

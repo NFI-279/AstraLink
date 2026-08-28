@@ -1,0 +1,100 @@
+.app-shell {
+    width:
+        min(
+            100vw,
+            390px
+        );
+
+    min-height: 100vh;
+
+    margin: 0 auto;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f6f7fa 0%,
+            #eff1f5 100%
+        );
+}
+
+
+.screen {
+    display: none;
+
+    min-height: 100vh;
+
+    padding:
+        calc(
+            env(
+                safe-area-inset-top,
+                0px
+            )
+            + 10px
+        )
+        14px
+        calc(
+            var(--tabbar-h)
+            + 22px
+        );
+}
+
+
+.screen.active {
+    display: block;
+}
+
+.screen.settings-screen.active {
+    display: block;
+
+    height: 100dvh;
+
+    overflow-y: auto;
+}
+
+/*
+ * Vehicle is intentionally a fixed viewport.
+ * It should feel like an app screen,
+ * not a vertically scrolling website.
+ */
+
+body.vehicle-active {
+    height: 100dvh !important;
+    max-height: 100dvh !important;
+
+    overflow: hidden !important;
+}
+
+
+body.vehicle-active
+.app-shell {
+    height: 100dvh !important;
+
+    min-height: 0 !important;
+    max-height: 100dvh !important;
+
+    overflow: hidden !important;
+}
+
+
+body.vehicle-active
+#screen-vehicle {
+    height: 100dvh !important;
+
+    min-height: 0 !important;
+    max-height: 100dvh !important;
+
+    overflow: hidden !important;
+
+    padding-bottom:
+        calc(
+            56px
+            + env(
+                safe-area-inset-bottom,
+                0px
+            )
+        );
+}
